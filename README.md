@@ -101,3 +101,49 @@ func main() {
 	}
 }
 ```
+
+Options for FindOptions and FindAllOptions:
+
+```golang
+package main
+
+import (
+	"github.com/allisson/sqlutil"
+	_ "github.com/lib/pq"
+)
+
+func main() {
+	findOptions := sqlutil.NewFindOptions(sqlutil.PostgreSQLFlavor).
+		WithFields([]string{"id", "name"}). // Return only id and name fields
+		WithFilter("id", 1).                // WHERE id = 1
+		WithFilter("id", nil).              // WHERE id IS NULL
+		WithFilter("id.in", "1,2,3").       // WHERE id IN (1, 2, 3)
+		WithFilter("id.notin", "1,2,3").    // WHERE id NOT IN ($1, $2, $3)
+		WithFilter("id.not", 1).            // WHERE id <> 1
+		WithFilter("id.gt", 1).             // WHERE id > 1
+		WithFilter("id.gte", 1).            // WHERE id >= 1
+		WithFilter("id.lt", 1).             // WHERE id < 1
+		WithFilter("id.lte", 1).            // WHERE id <= 1
+		WithFilter("id.like", 1).           // WHERE id LIKE 1
+		WithFilter("id.null", true).        // WHERE id.null IS NULL
+		WithFilter("id.null", false)        // WHERE id.null IS NOT NULL
+
+	findAllOptions := sqlutil.NewFindAllOptions(sqlutil.PostgreSQLFlavor).
+		WithFields([]string{"id", "name"}). // Return only id and name fields
+		WithFilter("id", 1).                // WHERE id = 1
+		WithFilter("id", nil).              // WHERE id IS NULL
+		WithFilter("id.in", "1,2,3").       // WHERE id IN (1, 2, 3)
+		WithFilter("id.notin", "1,2,3").    // WHERE id NOT IN ($1, $2, $3)
+		WithFilter("id.not", 1).            // WHERE id <> 1
+		WithFilter("id.gt", 1).             // WHERE id > 1
+		WithFilter("id.gte", 1).            // WHERE id >= 1
+		WithFilter("id.lt", 1).             // WHERE id < 1
+		WithFilter("id.lte", 1).            // WHERE id <= 1
+		WithFilter("id.like", 1).           // WHERE id LIKE 1
+		WithFilter("id.null", true).        // WHERE id.null IS NULL
+		WithFilter("id.null", false).       // WHERE id.null IS NOT NULL
+		WithLimit(10).                      // LIMIT 10
+		WithOffset(0).                      // OFFSET 0
+		WithOrderBy("name asc")             // ORDER BY name asc
+}
+```
