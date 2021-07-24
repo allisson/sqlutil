@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/allisson/sqlutil/compare/v1.0.0...v1.1.0) (2021-07-24)
+
+
+### Features
+
+* update InsertQuery to add RETURNING * clause ([#3](https://www.github.com/allisson/sqlutil/issues/3)) ([4f4a41d](https://www.github.com/allisson/sqlutil/commit/4f4a41d22ffe618617881a8627fc6b5fe821099e))
+
 ## 1.0.0 (2021-07-23)
 
 
