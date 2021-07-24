@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/allisson/sqlutil/compare/v1.1.0...v1.2.0) (2021-07-24)
+
+
+### Features
+
+* add Querier interface to allow *sql.DB/*sql.Conn/*sql.Tx on helpers ([#5](https://www.github.com/allisson/sqlutil/issues/5)) ([212a36b](https://www.github.com/allisson/sqlutil/commit/212a36bba343736b6e32350909076c1cb1a2230d))
+
 ## [1.1.0](https://www.github.com/allisson/sqlutil/compare/v1.0.0...v1.1.0) (2021-07-24)
 
 
