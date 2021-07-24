@@ -69,7 +69,7 @@ type player struct {
 }
 
 func TestInsertQuery(t *testing.T) {
-	expectedSQLQuery := `INSERT INTO players (id, name) VALUES ($1, $2)`
+	expectedSQLQuery := `INSERT INTO players (id, name) VALUES ($1, $2) RETURNING *`
 	expectedArgs := []interface{}{1, "Ronaldinho 10"}
 	r10 := player{ID: 1, Name: "Ronaldinho 10"}
 	sqlQuery, args := InsertQuery(PostgreSQLFlavor, "insert", "players", &r10)
