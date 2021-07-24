@@ -22,8 +22,7 @@ func Select(ctx context.Context, db *sql.DB, tableName string, options *FindAllO
 // Insert is a high-level function that calls InsertQuery and db.ExecContext.
 func Insert(ctx context.Context, db *sql.DB, flavor Flavor, tag, tableName string, structValue interface{}) error {
 	sqlQuery, args := InsertQuery(flavor, tag, tableName, structValue)
-	_, err := db.ExecContext(ctx, sqlQuery, args...)
-	return err
+	return sqlscan.Get(ctx, db, structValue, sqlQuery, args...)
 }
 
 // Update is a high-level function that calls UpdateQuery and db.ExecContext.

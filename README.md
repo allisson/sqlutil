@@ -21,14 +21,14 @@ import (
 )
 
 type Player struct {
-	ID   string `db:"id"`
-	Name string `db:"name" fieldtag:"update"`
-	Age  int    `db:"age" fieldtag:"update"`
+	ID   int    `db:"id"`
+	Name string `db:"name" fieldtag:"insert,update"`
+	Age  int    `db:"age" fieldtag:"insert,update"`
 }
 
 func main() {
 	// Connect to database
-	db, err := sql.Open("postgres", "postgres://user:pass@localhost/sqlutil?sslmode=disable")
+	db, err := sql.Open("postgres", "postgres://user:password@localhost/sqlutil?sslmode=disable")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -41,7 +41,7 @@ func main() {
 	// Create table
 	_, err = db.Exec(`
 		CREATE TABLE IF NOT EXISTS players(
-			id VARCHAR PRIMARY KEY,
+			id SERIAL PRIMARY KEY,
 			name VARCHAR NOT NULL,
 			age INTEGER NOT NULL
 		)
@@ -52,17 +52,15 @@ func main() {
 
 	// Insert players
 	r9 := Player{
-		ID:   "R9",
 		Name: "Ronaldo Fenômeno",
 		Age:  44,
 	}
 	r10 := Player{
-		ID:   "R10",
 		Name: "Ronaldinho Gaúcho",
 		Age:  41,
 	}
 	flavour := sqlutil.PostgreSQLFlavor
-	tag := "" // empty tag will use all fields from struct
+	tag := "insert" // will use fields with fieldtag:"insert"
 	ctx := context.Background()
 	if err := sqlutil.Insert(ctx, db, sqlutil.PostgreSQLFlavor, tag, "players", &r9); err != nil {
 		log.Fatal(err)
@@ -70,9 +68,11 @@ func main() {
 	if err := sqlutil.Insert(ctx, db, sqlutil.PostgreSQLFlavor, tag, "players", &r10); err != nil {
 		log.Fatal(err)
 	}
+	fmt.Printf("%#v\n", r9)
+	fmt.Printf("%#v\n", r10)
 
 	// Get player
-	findOptions := sqlutil.NewFindOptions(flavour).WithFilter("id", "R10")
+	findOptions := sqlutil.NewFindOptions(flavour).WithFilter("id", r10.ID)
 	if err := sqlutil.Get(ctx, db, "players", findOptions, &r10); err != nil {
 		log.Fatal(err)
 	}
