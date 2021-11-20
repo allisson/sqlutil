@@ -1,10 +1,8 @@
 #!/bin/bash
 
 GIT_ROOT="$(git rev-parse --show-toplevel)"
-LINT_VERSION="v1.41.1"
+LINT_VERSION="v1.43.0"
 LINT_BIN="$GIT_ROOT/.golangci-lint"
-GOIF_VERSION="v1.0.2"
-GOIF_BIN="$GIT_ROOT/.go-oif"
 
 set -e
 
@@ -14,13 +12,5 @@ if [ ! -f "$LINT_BIN" ]; then
     mv "$GIT_ROOT/golangci-lint" "$LINT_BIN"
 fi
 
-if [ ! -f "$GOIF_BIN" ]; then
-    echo "Downloading dependencies (go-oif)..."
-    curl -sSfL https://raw.githubusercontent.com/heyvito/go-oif/main/install.sh | sh -s -- -b "$GIT_ROOT" "$GOIF_VERSION"
-    mv "$GIT_ROOT/go-oif" "$GOIF_BIN"
-fi
-
-echo "Running linter (go-oif)..."
-"$GOIF_BIN" ./...
 echo "Running linter (golangci-lint)..."
-"$LINT_BIN" run -E gosec
+"$LINT_BIN" run --fix
