@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/allisson/sqlutil/compare/v1.3.0...v1.4.0) (2022-09-12)
+
+
+### Features
+
+* update project to use golang 1.18.x ([#9](https://github.com/allisson/sqlutil/issues/9)) ([549ca56](https://github.com/allisson/sqlutil/commit/549ca566ccf87a6a64eebb48c2c139a9226c7e53))
+
 ## [1.3.0](https://www.github.com/allisson/sqlutil/compare/v1.2.0...v1.3.0) (2021-11-20)
 
 
