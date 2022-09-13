@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.2](https://github.com/allisson/sqlutil/compare/v1.5.1...v1.5.2) (2022-09-13)
+
+
+### Bug Fixes
+
+* Fix readme example ([#15](https://github.com/allisson/sqlutil/issues/15)) ([5fb0eb8](https://github.com/allisson/sqlutil/commit/5fb0eb89d1a16093b906849c08061f2d51606a93))
+
 ## [1.5.1](https://github.com/allisson/sqlutil/compare/v1.5.0...v1.5.1) (2022-09-13)
 
 
