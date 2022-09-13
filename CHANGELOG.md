@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/allisson/sqlutil/compare/v1.5.0...v1.5.1) (2022-09-13)
+
+
+### Bug Fixes
+
+* use ExecContext on Insert function ([#13](https://github.com/allisson/sqlutil/issues/13)) ([8819c10](https://github.com/allisson/sqlutil/commit/8819c104762dfa72458b06a139e4d85e16bf7153))
+
 ## [1.5.0](https://github.com/allisson/sqlutil/compare/v1.4.0...v1.5.0) (2022-09-13)
 
 
