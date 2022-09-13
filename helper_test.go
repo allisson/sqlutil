@@ -9,6 +9,11 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+type player struct {
+	ID   int    `db:"id" fieldtag:"insert"`
+	Name string `db:"name" fieldtag:"insert,update"`
+}
+
 func TestGet(t *testing.T) {
 	db, mock, err := sqlmock.New()
 	assert.Nil(t, err)
