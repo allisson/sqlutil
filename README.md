@@ -68,15 +68,16 @@ func main() {
 	if err := sqlutil.Insert(ctx, db, sqlutil.PostgreSQLFlavor, tag, "players", &r10); err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("%#v\n", r9)
-	fmt.Printf("%#v\n", r10)
 
 	// Get player
-	findOptions := sqlutil.NewFindOptions(flavour).WithFilter("id", r10.ID)
+	findOptions := sqlutil.NewFindOptions(flavour).WithFilter("name", r10.Name)
 	if err := sqlutil.Get(ctx, db, "players", findOptions, &r10); err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("%#v\n", r10)
+	findOptions := sqlutil.NewFindOptions(flavour).WithFilter("name", r9.Name)
+	if err := sqlutil.Get(ctx, db, "players", findOptions, &r9); err != nil {
+		log.Fatal(err)
+	}
 
 	// Select players
 	players := []*Player{}

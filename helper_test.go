@@ -56,10 +56,10 @@ func TestInsert(t *testing.T) {
 	assert.Nil(t, err)
 	defer db.Close()
 
-	rows := sqlmock.NewRows([]string{"id", "name"}).AddRow(1, "Ronaldinho Gaúcho")
-	mock.ExpectQuery(regexp.QuoteMeta(`INSERT INTO players`)).
+	//rows := sqlmock.NewRows([]string{"id", "name"}).AddRow(1, "Ronaldinho Gaúcho")
+	mock.ExpectExec(regexp.QuoteMeta(`INSERT INTO players`)).
 		WithArgs(1, "Ronaldinho Gaúcho").
-		WillReturnRows(rows)
+		WillReturnResult(sqlmock.NewResult(1, 1))
 
 	p := player{
 		ID:   1,
