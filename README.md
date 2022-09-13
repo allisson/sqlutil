@@ -27,6 +27,7 @@ type Player struct {
 }
 
 func main() {
+	// Run a database with docker: docker run --name test --restart unless-stopped -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password -e POSTGRES_DB=sqlutil -p 5432:5432 -d postgres:14-alpine
 	// Connect to database
 	db, err := sql.Open("postgres", "postgres://user:password@localhost/sqlutil?sslmode=disable")
 	if err != nil {
@@ -74,7 +75,7 @@ func main() {
 	if err := sqlutil.Get(ctx, db, "players", findOptions, &r10); err != nil {
 		log.Fatal(err)
 	}
-	findOptions := sqlutil.NewFindOptions(flavour).WithFilter("name", r9.Name)
+	findOptions = sqlutil.NewFindOptions(flavour).WithFilter("name", r9.Name)
 	if err := sqlutil.Get(ctx, db, "players", findOptions, &r9); err != nil {
 		log.Fatal(err)
 	}
