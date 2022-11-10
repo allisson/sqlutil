@@ -5,7 +5,7 @@ import (
 	"database/sql"
 
 	"github.com/allisson/sqlquery"
-	"github.com/georgysavva/scany/sqlscan"
+	"github.com/georgysavva/scany/v2/sqlscan"
 )
 
 type Flavor = sqlquery.Flavor

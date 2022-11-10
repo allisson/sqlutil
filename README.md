@@ -146,6 +146,7 @@ func main() {
 		WithFilter("id.null", false).       // WHERE id.null IS NOT NULL
 		WithLimit(10).                      // LIMIT 10
 		WithOffset(0).                      // OFFSET 0
-		WithOrderBy("name asc")             // ORDER BY name asc
+		WithOrderBy("name asc").            // ORDER BY name asc
+		WithForUpdate("SKIP LOCKED")        // FOR UPDATE SKIP LOCKED
 }
 ```
