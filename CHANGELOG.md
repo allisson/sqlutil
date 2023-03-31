@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/allisson/sqlutil/compare/v1.6.0...v1.7.0) (2023-03-31)
+
+
+### Features
+
+* update sqlquery to version v1.2.0 ([#19](https://github.com/allisson/sqlutil/issues/19)) ([7d8d527](https://github.com/allisson/sqlutil/commit/7d8d527f4f879dfb7a347b2ed61efbfdf84ce35c))
+
 ## [1.6.0](https://github.com/allisson/sqlutil/compare/v1.5.2...v1.6.0) (2022-11-10)
 
 
