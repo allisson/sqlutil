@@ -102,3 +102,31 @@ func TestDelete(t *testing.T) {
 	err = Delete(context.Background(), db, PostgreSQLFlavor, "players", p.ID)
 	assert.Nil(t, err)
 }
+
+func TestUpdateWithOptions(t *testing.T) {
+	db, mock, err := sqlmock.New()
+	assert.Nil(t, err)
+	defer db.Close()
+
+	mock.ExpectExec(regexp.QuoteMeta(`UPDATE players SET name = $1 WHERE id = $2`)).
+		WithArgs("Ronaldinho Gaúcho", 1).
+		WillReturnResult(sqlmock.NewResult(1, 1))
+
+	options := NewUpdateOptions(PostgreSQLFlavor).WithAssignment("name", "Ronaldinho Gaúcho").WithFilter("id", 1)
+	err = UpdateWithOptions(context.Background(), db, PostgreSQLFlavor, "players", options)
+	assert.Nil(t, err)
+}
+
+func TestDeleteWithOptions(t *testing.T) {
+	db, mock, err := sqlmock.New()
+	assert.Nil(t, err)
+	defer db.Close()
+
+	mock.ExpectExec(regexp.QuoteMeta(`DELETE FROM players WHERE id = $1`)).
+		WithArgs(1).
+		WillReturnResult(sqlmock.NewResult(1, 1))
+
+	options := NewDeleteOptions(PostgreSQLFlavor).WithFilter("id", 1)
+	err = DeleteWithOptions(context.Background(), db, PostgreSQLFlavor, "players", options)
+	assert.Nil(t, err)
+}
