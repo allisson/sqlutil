@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/DATA-DOG/go-sqlmock v1.5.0
-	github.com/allisson/sqlquery v1.3.0
+	github.com/allisson/sqlquery v1.3.1
 	github.com/georgysavva/scany/v2 v2.0.0
 	github.com/stretchr/testify v1.8.2
 )
