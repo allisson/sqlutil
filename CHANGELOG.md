@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/allisson/sqlutil/compare/v1.7.0...v1.8.0) (2023-04-04)
+
+
+### Features
+
+* add UpdateWithOptions and DeleteWithOptions functions ([#21](https://github.com/allisson/sqlutil/issues/21)) ([0b1adf1](https://github.com/allisson/sqlutil/commit/0b1adf1d2b0b39055ce38e5197a7b284757de1f2))
+
 ## [1.7.0](https://github.com/allisson/sqlutil/compare/v1.6.0...v1.7.0) (2023-03-31)
 
 
