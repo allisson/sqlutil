@@ -1,7 +1,7 @@
 github.com/DATA-DOG/go-sqlmock v1.5.0 h1:Shsta01QNfFxHCfpW6YH2STWB0MudeXXEWMr20OEh60=
 github.com/DATA-DOG/go-sqlmock v1.5.0/go.mod h1:f/Ixk793poVmq4qj/V1dPUg2JEAKC73Q5eFN3EC/SaM=
-github.com/allisson/sqlquery v1.3.0 h1:m260I23tu14mjYyhYBvRU5RV3QmUAoEL6T62LJp4ZhE=
-github.com/allisson/sqlquery v1.3.0/go.mod h1:SfAu/CPxjTQU7cYVGljdFtwT8s0QZ/6BM6bzrxenoBo=
+github.com/allisson/sqlquery v1.3.1 h1:D/DBvZRqmw4bPP5v5zrNooVAgHtU1pZf/CT5mMrW3Is=
+github.com/allisson/sqlquery v1.3.1/go.mod h1:SfAu/CPxjTQU7cYVGljdFtwT8s0QZ/6BM6bzrxenoBo=
 github.com/cockroachdb/cockroach-go/v2 v2.2.0 h1:/5znzg5n373N/3ESjHF5SMLxiW4RKB05Ql//KWfeTFs=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
