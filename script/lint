@@ -1,7 +1,7 @@
 #!/bin/bash
 
 GIT_ROOT="$(git rev-parse --show-toplevel)"
-LINT_VERSION="v1.52.2"
+LINT_VERSION="v1.56.1"
 LINT_BIN="$GIT_ROOT/.golangci-lint"
 
 set -e
