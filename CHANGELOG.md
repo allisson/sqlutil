@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/allisson/sqlutil/compare/v1.8.1...v1.9.0) (2024-02-15)
+
+
+### Features
+
+* update sqlquery version ([#25](https://github.com/allisson/sqlutil/issues/25)) ([915eea9](https://github.com/allisson/sqlutil/commit/915eea9b01a38e210b707014873fc349ae61a4d9))
+
 ## [1.8.1](https://github.com/allisson/sqlutil/compare/v1.8.0...v1.8.1) (2023-04-04)
 
 
