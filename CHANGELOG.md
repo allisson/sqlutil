@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/allisson/sqlutil/compare/v1.9.0...v1.10.0) (2026-01-20)
+
+
+### Features
+
+* enhance documentation ([#27](https://github.com/allisson/sqlutil/issues/27)) ([a078b55](https://github.com/allisson/sqlutil/commit/a078b5551cb830f60d30d3e234fa8fbdf2e0f321))
+
 ## [1.9.0](https://github.com/allisson/sqlutil/compare/v1.8.1...v1.9.0) (2024-02-15)
 
 
